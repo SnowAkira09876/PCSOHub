@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+    <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_date"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+    <com.ph.pcsolottowatcher.widgets.circular.CircularDigitView
+            android:id="@+id/circular_item"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:paddingTop="8dp"
+            app:circ_backgroundColor="?attr/colorSecondaryContainer" 
+            app:circ_size="50dp"
+            app:circ_textAppearance="?attr/textAppearanceHeadline6"
+            app:circ_textColor="?attr/colorControlNormal" />
+
+</LinearLayout>

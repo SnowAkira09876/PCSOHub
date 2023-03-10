@@ -1,0 +1,117 @@
+plugins {
+	id 'com.android.application'
+	id 'com.google.gms.google-services'
+	id 'com.diffplug.spotless'
+}
+
+android {
+	compileSdk 33
+	buildToolsVersion "33.0.0"
+	namespace 'com.ph.pcsolottowatcher'
+
+	defaultConfig {
+		applicationId "com.ph.pcsolottowatcher"
+		minSdk 24
+		targetSdk 33
+		versionCode 33
+		versionName "6.3"
+	}
+
+	signingConfigs {
+	release {
+		keyAlias 'AkiraSnow'
+		keyPassword 'Akira00'
+		storeFile file("/storage/emulated/0/AndroidIDEProjects/AkiraSnow00.jks")
+		storePassword 'Akira00'
+	}
+
+	debug {
+		keyAlias 'AkiraSnow'
+		keyPassword 'Akira00'
+		storeFile file("/storage/emulated/0/AndroidIDEProjects/AkiraSnow00.jks")
+		storePassword 'Akira00'
+	}
+	}
+
+	buildTypes {
+		release {
+			signingConfig signingConfigs.release
+			minifyEnabled true
+			shrinkResources true
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		}
+	}
+
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_11
+		targetCompatibility JavaVersion.VERSION_11
+	}
+
+	sourceSets {
+	main {
+		res.srcDirs =
+		[
+				'src/main/res/layouts/activities',
+				'src/main/res/layouts/fragments',
+				'src/main/res/layouts/viewholders',
+				'src/main/res/layouts/dialogs',
+				'src/main/res/layouts',
+				'src/main/res'
+		]
+	}
+}
+
+	lintOptions {
+		disable 'NotificationPermission', 'MenuTitle'
+	}
+
+viewBinding.enabled = true
+}
+
+spotless {
+	format 'misc', {
+		target '*.gradle', '*.md', '.gitignore'
+
+		trimTrailingWhitespace()
+		indentWithTabs()
+		endWithNewline()
+	}
+
+	java {
+	target 'src/*/java/**/*.java'
+		removeUnusedImports()
+		googleJavaFormat()
+		importOrder()
+		cleanthat()
+		formatAnnotations()
+	}
+}
+
+dependencies {
+	//UI
+	implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
+	implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01'
+	implementation 'com.github.daniel-stoneuk:material-about-library:3.1.2'
+	implementation 'androidx.navigation:navigation-fragment:2.5.3'
+	implementation 'androidx.navigation:navigation-ui:2.5.3'
+	implementation 'androidx.preference:preference:1.2.0'
+	implementation 'androidx.appcompat:appcompat:1.6.1'
+	implementation 'androidx.fragment:fragment:1.5.5'
+	implementation 'com.squareup.picasso:picasso:2.8'
+	implementation 'androidx.preference:preference:1.2.0'
+	implementation 'com.google.code.gson:gson:2.8.9'
+	implementation 'com.google.android.material:material:1.9.0-alpha02'
+	implementation 'com.firebaseui:firebase-ui-auth:8.0.2'
+	implementation 'com.firebaseui:firebase-ui-database:8.0.2'
+
+	//Dagger2
+	implementation 'com.google.dagger:dagger:2.45'
+	annotationProcessor 'com.google.dagger:dagger-compiler:2.45'
+
+	//Data
+	implementation platform('com.google.firebase:firebase-bom:31.1.1')
+	implementation 'com.google.firebase:firebase-auth'
+	implementation 'org.jsoup:jsoup:1.15.3'
+	implementation 'com.google.firebase:firebase-database'
+	implementation 'com.google.firebase:firebase-storage'
+}

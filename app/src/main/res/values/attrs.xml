@@ -1,0 +1,25 @@
+<resources>
+    <declare-styleable name="BouncingDots">
+        <attr
+            name="dotsCount"
+            format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="CircularDigitView">
+        <attr
+            name="circ_textAppearance"
+            format="reference" />
+        
+        <attr
+            name="circ_backgroundColor"
+            format="color" />
+        
+        <attr
+            name="circ_textColor"
+            format="color" />
+        <attr
+            name="circ_size"
+            format="dimension" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,23 @@
+<menu
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+	<item
+		android:id="@+id/main_bottom_results"
+		android:enabled="true"
+		android:icon="@drawable/ic_results"
+		android:title="@string/menu_results"
+		/>
+	<item
+		android:id="@+id/main_bottom_community"
+		android:enabled="true"
+		android:icon="@drawable/ic_community"
+		android:title="@string/menu_community"
+		/>
+		
+	<item
+		android:id="@+id/main_bottom_all_results"
+		android:enabled="true"
+		android:icon="@drawable/ic_all_results"
+		android:title="@string/menu_all_results"
+		/>
+</menu>

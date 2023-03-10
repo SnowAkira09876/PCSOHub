@@ -1,0 +1,148 @@
+{
+    "lotto_games": [
+        {
+            "historyLink": "https://www.lottopcso.com/6-58-lotto-result-history-and-summary/",
+            "name": "6/58",
+            "type": "Six Digits",
+            "regex": "^6/58\\s?(\\d{2}-\\d{2}-\\d{2}-\\d{2}-\\d{2}-\\d{2})$"
+        },
+        {
+            "historyLink": "https://www.lottopcso.com/6-55-lotto-result-history-and-summary/",
+            "name": "6/55",
+            "type": "Six Digits",
+            "regex": "^6/55\\s?(\\d{2}-\\d{2}-\\d{2}-\\d{2}-\\d{2}-\\d{2})$"
+        },
+        {
+            "historyLink": "https://www.lottopcso.com/6-49-lotto-result-history-and-summary/",
+            "name": "6/49",
+            "type": "Six Digits",
+            "regex": "^6/49\\s?(\\d{2}-\\d{2}-\\d{2}-\\d{2}-\\d{2}-\\d{2})$"
+        },
+        {
+            "historyLink": "https://www.lottopcso.com/6-45-lotto-result-history-and-summary/",
+            "name": "6/45",
+            "type": "Six Digits",
+            "regex": "^6/45\\s?(\\d{2}-\\d{2}-\\d{2}-\\d{2}-\\d{2}-\\d{2})$"
+        },
+        {
+            "historyLink": "https://www.lottopcso.com/6-42-lotto-result-history-and-summary/",
+            "name": "6/42",
+            "tableNumber": 0,
+            "type": "Six Digits",
+            "regex": "^6/42\\s?(\\d{2}-\\d{2}-\\d{2}-\\d{2}-\\d{2}-\\d{2})$"
+        },
+        {
+            "historyLink": "https://www.lottopcso.com/6d-lotto-results-6d-history-and-summary/",
+            "name": "6 Digits",
+            "type": "D",
+            "regex": "^(\\d{1}-\\d{1}-\\d{1}-\\d{1}-\\d{1}-\\d{1})$"
+        },
+        {
+            "historyLink": "https://www.lottopcso.com/4d-lotto-results-4d-history-and-summary/",
+            "name": "4D",
+            "type": "D",
+            "regex": "^(\\d{1}-\\d{1}-\\d{1}-\\d{1})$"
+        },
+        {
+            "historyLink": "https://www.lottopcso.com/swertres-result-today-hearing-history-and-summary/",
+            "name": "Swertres",
+            "type": "ThreeTime",
+            "regex": "^(\\d{1}-\\d{1}-\\d{1})$"
+        },
+        {
+            "historyLink": "https://www.lottopcso.com/ez2-result-today-lotto-history-and-summary/",
+            "name": "EZ2",
+            "type": "ThreeTime",
+            "regex": "^(\\d{2}-\\d{2})$"
+        },
+        {
+            "historyLink": "https://www.lottopcso.com/stl-pares-result-history-summary/",
+            "name": "STL Pares Visayas",
+            "tableNumber": 0,
+            "type": "ThreeTime",
+            "regex": "^(?i)STL VISAYAS\\s?(\\d{2}-\\d{2})$"
+        },
+        {
+            "historyLink": "https://www.lottopcso.com/stl-pares-result-history-summary/",
+            "name": "STL Pares Mindanao",
+            "tableNumber": 1,
+            "type": "ThreeTime",
+            "regex": "^(?i)STL MINDANAO\\s?(\\d{2}-\\d{2})$"
+        },
+        {
+            "historyLink": "https://www.lottopcso.com/stl-swer3-result-history-summary/",
+            "name": "STL Swer3 Visayas",
+            "tableNumber": 0,
+            "type": "ThreeTime",
+            "regex": "^(?i)STL VISAYAS\\s?(\\d{1}-\\d{1}-\\d{1})$"
+        },
+        {
+            "historyLink": "https://www.lottopcso.com/stl-swer3-result-history-summary/",
+            "name": "STL Swer3 Mindanao",
+            "tableNumber": 1,
+            "type": "ThreeTime",
+            "regex": "^(?i)STL MINDANAO\\s?(\\d{1}-\\d{1}-\\d{1})$"
+        },
+        {
+            "historyLink": "https://www.lottopcso.com/stl-swer2-result-history-summary/",
+            "name": "STL Swer2 Visayas",
+            "tableNumber": 0,
+            "type": "ThreeTime",
+            "regex": "^(?i)STL VISAYAS\\s?(\\d{1}-\\d{1})$"
+        },
+        {
+            "historyLink": "https://www.lottopcso.com/stl-swer2-result-history-summary/",
+            "name": "STL Swer2 Mindanao",
+            "tableNumber": 1,
+            "type": "ThreeTime",
+            "regex": "^(?i)STL MINDANAO\\s?(\\d{1}-\\d{1})$"
+        },
+        {
+            "historyLink": "https://www.lottopcso.com/stl-swer4-result-today-history-summary/",
+            "name": "STL Swer4 Mindanao",
+            "type": "OneTime",
+            "regex": "^(?i)STL MINDANAO\\s?(\\d{1}-\\d{1}-\\d{1}-\\d{1})$"
+        }
+    ],
+    "pcsogov_games": [
+        {
+            "name": "Ultra Lotto 6/58"
+        },
+        {
+            "name": "Grand Lotto 6/55"
+        },
+        {
+            "name": "Superlotto 6/49"
+        },
+        {
+            "name": "Megalotto 6/45"
+        },
+        {
+            "name": "Lotto 6/42"
+        },
+        {
+            "name": "6D Lotto"
+        },
+        {
+            "name": "4D Lotto"
+        },
+        {
+            "name": "3D Lotto 2PM"
+        },
+        {
+            "name": "3D Lotto 5PM"
+        },
+        {
+            "name": "3D Lotto 9PM"
+        },
+        {
+            "name": "2D Lotto 2PM"
+        },
+        {
+            "name": "2D Lotto 5PM"
+        },
+        {
+            "name": "2D Lotto 9PM"
+        }
+    ]
+}

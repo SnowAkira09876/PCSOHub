@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:paddingEnd="20dp"
+     android:orientation="vertical"
+     android:paddingStart="20dp"
+     android:paddingTop="20dp">
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:textAppearance="?attr/textAppearanceHeadline6"
+         android:id="@+id/tv_title"
+         android:text="@string/fragment_comment_tv_title_text" />
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:textAppearance="?attr/textAppearanceBodySmall"
+         android:paddingTop="5dp"
+         android:id="@+id/tv_subtitle"
+         android:text="@string/fragment_comment_tv_subtitle_text" />
+
+    <com.google.android.material.textfield.TextInputLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         app:endIconMode="custom"
+         android:hint="@string/fragment_comment_tl_comment_hint"
+         app:endIconDrawable="@drawable/ic_comment"
+         style="?attr/textInputFilledStyle"
+         android:layout_marginTop="10dp"
+         android:id="@+id/tl_comment">
+
+        <com.google.android.material.textfield.TextInputEditText
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:id="@+id/ti_comment" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:id="@+id/rv"
+         android:overScrollMode="never" />
+
+</LinearLayout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+    <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+        <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_height="60dp"
+                    android:layout_width="60dp"
+                    app:shapeAppearanceOverlay="@style/CircularImageView" />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_game_name"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/iv_profile"
+                    android:layout_width="wrap_content"
+                    android:paddingStart="5dp"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                    android:textStyle="bold" />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_username"
+                    android:layout_below="@id/tv_game_name"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/iv_profile"
+                    android:layout_width="wrap_content"
+                    android:paddingStart="5dp"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_time"
+                android:layout_alignParentEnd="true"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textAppearance="?attr/textAppearanceBodySmall" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+            android:gravity="center"
+            android:layout_height="100dp"
+            android:layout_width="match_parent">
+
+        <com.ph.pcsolottowatcher.widgets.circular.CircularDigitView
+                android:id="@+id/circular_item"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:paddingTop="8dp"
+               app:circ_backgroundColor="?attr/colorSecondaryContainer" 
+                app:circ_size="50dp"
+                app:circ_textAppearance="?attr/textAppearanceHeadline6"
+                app:circ_textColor="?attr/colorControlNormal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:baselineAligned="false"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+        <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_likes_count"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBodySmall" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:gravity="end"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_comments_count"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBodySmall" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:baselineAligned="false"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+        <LinearLayout
+                android:background="@drawable/item_click_selector"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:id="@+id/ll_like"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+            <ImageView
+                    android:id="@+id/iv_heart"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:paddingEnd="5dp"
+                    android:src="@drawable/ic_heart_outline" />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/feed_item_like" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:background="@drawable/item_click_selector"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:id="@+id/ll_comment"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:padding="8dp">
+
+            <ImageView
+                    android:id="@+id/iv_comment"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:paddingEnd="5dp"
+                    android:src="@drawable/ic_comment_outline" />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/feed_item_comment" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:background="@drawable/item_click_selector"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:id="@+id/ll_copy"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:padding="8dp">
+
+            <ImageView
+                    android:id="@+id/iv_copy"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:paddingEnd="5dp"
+                    android:src="@drawable/ic_copy" />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/feed_item_copy" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

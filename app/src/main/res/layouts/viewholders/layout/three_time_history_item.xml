@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:gravity="center"
+        android:layout_height="100dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp">
+
+    <com.google.android.material.textview.MaterialTextView
+            android:gravity="center"
+            android:id="@+id/tv_date"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textAppearance="?attr/textAppearanceBodySmall" />
+
+    <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent">
+
+        <LinearLayout
+                android:gravity="center"
+                android:layout_alignParentStart="true"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_time_one"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBodySmall" />
+
+            <com.ph.pcsolottowatcher.widgets.circular.CircularDigitView
+                    android:id="@+id/circular_item_time_one"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    app:circ_backgroundColor="?attr/colorSecondaryContainer" 
+                    app:circ_size="30dp"
+                    app:circ_textAppearance="?attr/textAppearanceBodyLarge"
+                    app:circ_textColor="?attr/colorControlNormal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_time_two"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBodySmall" />
+
+            <com.ph.pcsolottowatcher.widgets.circular.CircularDigitView
+                    android:id="@+id/circular_item_time_two"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    app:circ_backgroundColor="?attr/colorSecondaryContainer" 
+                    app:circ_size="30dp"
+                    app:circ_textAppearance="?attr/textAppearanceBodyLarge"
+                    app:circ_textColor="?attr/colorControlNormal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_time_three"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBodySmall" />
+
+            <com.ph.pcsolottowatcher.widgets.circular.CircularDigitView
+                    android:id="@+id/circular_item_time_three"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    app:circ_backgroundColor="?attr/colorSecondaryContainer" 
+                    app:circ_size="30dp"
+                    app:circ_textAppearance="?attr/textAppearanceBodyLarge"
+                    app:circ_textColor="?attr/colorControlNormal" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

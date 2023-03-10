@@ -1,0 +1,89 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:key="cat_account_key"
+        android:title="@string/account"
+        app:iconSpaceReserved="false">
+        <Preference
+            android:summary="@string/sign_in_summary"
+            app:iconSpaceReserved="false"
+            android:key="pref_sign_in_key"
+            android:title="@string/sign_in"
+        />
+
+        <Preference
+            android:summary="@string/dispic_summary"
+            app:iconSpaceReserved="false"
+            android:key="pref_dispic_key"
+            android:title="@string/dispic"
+        />
+
+        <Preference
+            android:summary="@string/sign_out_summary"
+            app:iconSpaceReserved="false"
+            android:key="pref_sign_out_key"
+            android:title="@string/sign_out"
+        />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/theme"
+        app:iconSpaceReserved="false">
+        <Preference
+            android:summary="@string/this_feature"
+            app:iconSpaceReserved="false"
+            android:key="pref_theme_key"
+            android:title="@string/app_theme"
+        />
+
+        <SwitchPreferenceCompat
+            android:widgetLayout="@layout/preference_switch"
+            app:iconSpaceReserved="false"
+            android:key="pref_dynamic_key"
+            android:title="@string/dynamic_colors"
+            android:summary="@string/dynamic_colors_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/cache"
+        app:iconSpaceReserved="false">
+        <Preference
+            android:title="@string/clear_cache"
+            android:key="pref_clear_cache"
+            android:summary="@string/clear_cache_summary"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/about"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:title="@string/changelogs"
+            android:key="pref_changelogs"
+            android:summary="@string/whats_new"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            app:fragment="com.ph.pcsolottowatcher.preference.about.AboutFragment"
+            android:title="@string/about_pcso_hub"
+            android:key="pref_about"
+            android:summary="@string/get_to_know"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/deletion"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:summary="@string/delete_account_summary"
+            app:iconSpaceReserved="false"
+            android:key="pref_delete_acc_key"
+            android:title="@string/delete_account"
+        />
+
+    </PreferenceCategory>
+</PreferenceScreen>
