@@ -1,6 +1,7 @@
 package com.ph.pcsolottowatcher.data.jsoup.results;
 
 import android.os.Handler;
+import android.webkit.WebView;
 import com.ph.pcsolottowatcher.data.jsoup.BaseParser;
 import com.ph.pcsolottowatcher.pojos.d.DHistoryModel;
 import java.util.ArrayList;
@@ -11,8 +12,8 @@ import org.jsoup.select.Elements;
 public class DParser extends BaseParser<DHistoryModel> {
 
   @Inject
-  public DParser(Handler handler) {
-    super(handler);
+  public DParser(Handler handler, WebView webView) {
+    super(handler, webView);
   }
 
   @Override

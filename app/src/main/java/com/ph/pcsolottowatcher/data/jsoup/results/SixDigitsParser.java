@@ -1,6 +1,7 @@
 package com.ph.pcsolottowatcher.data.jsoup.results;
 
 import android.os.Handler;
+import android.webkit.WebView;
 import com.ph.pcsolottowatcher.data.jsoup.BaseParser;
 import com.ph.pcsolottowatcher.pojos.sixdigits.SixDigitsHistoryModel;
 import java.util.ArrayList;
@@ -11,8 +12,8 @@ import org.jsoup.select.Elements;
 public class SixDigitsParser extends BaseParser<SixDigitsHistoryModel> {
 
   @Inject
-  public SixDigitsParser(Handler handler) {
-    super(handler);
+  public SixDigitsParser(Handler handler, WebView webView) {
+    super(handler, webView);
   }
 
   @Override

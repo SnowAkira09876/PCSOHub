@@ -1,6 +1,7 @@
 package com.ph.pcsolottowatcher.data.jsoup.results;
 
 import android.os.Handler;
+import android.webkit.WebView;
 import com.ph.pcsolottowatcher.data.jsoup.BaseParser;
 import com.ph.pcsolottowatcher.pojos.onetime.OneTimeHistoryModel;
 import java.util.ArrayList;
@@ -12,8 +13,8 @@ public class OneTimeParser extends BaseParser<OneTimeHistoryModel> {
   private String timeOne;
 
   @Inject
-  public OneTimeParser(Handler handler) {
-    super(handler);
+  public OneTimeParser(Handler handler, WebView webView) {
+    super(handler, webView);
   }
 
   @Override

@@ -1,6 +1,7 @@
 package com.ph.pcsolottowatcher.data.jsoup.results;
 
 import android.os.Handler;
+import android.webkit.WebView;
 import com.ph.pcsolottowatcher.data.jsoup.BaseParser;
 import com.ph.pcsolottowatcher.pojos.threetime.ThreeTimeHistoryModel;
 import java.util.ArrayList;
@@ -12,8 +13,8 @@ public class ThreeTimeParser extends BaseParser<ThreeTimeHistoryModel> {
   private String timeOne, timeTwo, timeThree;
 
   @Inject
-  public ThreeTimeParser(Handler handler) {
-    super(handler);
+  public ThreeTimeParser(Handler handler, WebView webView) {
+    super(handler, webView);
   }
 
   @Override

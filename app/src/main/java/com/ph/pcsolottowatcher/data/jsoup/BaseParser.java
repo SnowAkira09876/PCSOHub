@@ -1,6 +1,8 @@
 package com.ph.pcsolottowatcher.data.jsoup;
 
 import android.os.Handler;
+import android.util.Log;
+import android.webkit.WebView;
 import androidx.annotation.NonNull;
 import com.ph.pcsolottowatcher.data.sql.cache.BaseCache;
 import com.ph.pcsolottowatcher.pojos.BaseHistoryModel;
@@ -17,15 +19,17 @@ public abstract class BaseParser<T extends BaseHistoryModel> implements Runnable
   protected Handler handler;
   protected final ArrayList<T> list = new ArrayList<>();
   protected ParserListener<T> listener;
+  protected String userAgent;
 
-  public BaseParser(Handler handler) {
+  public BaseParser(Handler handler, WebView webView) {
     this.handler = handler;
+    this.userAgent = webView.getSettings().getUserAgentString();
   }
 
   @Override
   public void run() {
     try {
-      this.history = Jsoup.connect(link).timeout(4000).get();
+      this.history = Jsoup.connect(link).timeout(4000).userAgent(userAgent).get();
 
       handler.post(
           () -> {

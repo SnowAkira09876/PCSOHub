@@ -3,6 +3,7 @@ package com.ph.pcsolottowatcher.di.modules;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
+import android.webkit.WebView;
 import com.google.gson.Gson;
 import dagger.Module;
 import dagger.Provides;
@@ -32,5 +33,11 @@ public class DataCoreModule {
   @Singleton
   public Gson provideGson() {
     return new Gson();
+  }
+
+  @Provides
+  @Singleton
+  public WebView provideWebView() {
+    return new WebView(context);
   }
 }

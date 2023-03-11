@@ -41,7 +41,6 @@ import com.ph.pcsolottowatcher.data.sharedpref.PrefHelper;
 import com.ph.pcsolottowatcher.data.sql.search.SearchHistoryCache;
 import com.ph.pcsolottowatcher.databinding.ActivityMainBinding;
 import com.ph.pcsolottowatcher.di.AppComponent;
-import com.ph.pcsolottowatcher.dialogs.exit.DialogFragmentExit;
 import com.ph.pcsolottowatcher.dialogs.loginprompt.DialogFragmentLoginPrompt;
 import com.ph.pcsolottowatcher.dialogs.sort.DialogFragmentSort;
 import com.ph.pcsolottowatcher.dialogs.verifyemail.FragmentDialogVerifyEmail;
@@ -141,7 +140,7 @@ public class MainActivity extends BaseActivity<MainActivityPresenter>
 
   @Override
   public void onBackPressed() {
-    if (isSearchViewHidden) new DialogFragmentExit().show(getSupportFragmentManager(), null);
+    if (isSearchViewHidden) super.onBackPressed();
     else searchView.hide();
   }
 
