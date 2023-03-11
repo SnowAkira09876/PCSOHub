@@ -75,8 +75,7 @@ public class MainPreferenceActivity extends BaseActivity<MainPreferencePresenter
     if (getSupportFragmentManager().popBackStackImmediate()) {
       return true;
     }
-    supportNavigateUpTo(
-        new Intent(this, MainActivity.class));
+    supportNavigateUpTo(new Intent(this, MainActivity.class));
     return super.onSupportNavigateUp();
   }
 
@@ -85,7 +84,7 @@ public class MainPreferenceActivity extends BaseActivity<MainPreferencePresenter
     if (getSupportFragmentManager().popBackStackImmediate()) {
       return;
     }
-    startActivity(new Intent(this, MainActivity.class));
+    supportNavigateUpTo(new Intent(this, MainActivity.class));
   }
 
   @Override

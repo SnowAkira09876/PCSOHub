@@ -1,5 +1,6 @@
 .androidide/
 app/build
+build/
 app/google-services.json
 .gradle/
 .ssh/
