@@ -26,8 +26,6 @@
     <string name="theme">Theme</string>
     <string name="this_feature">Change the app theme</string>
     <string name="about">About</string>
-    <string name="changelogs">Changelogs</string>
-    <string name="whats_new">What\'s new in this version</string>
     <string name="about_pcso_hub">About PCSO Hub</string>
     <string name="get_to_know">Get to know behind the development of PCSO Hub</string>
     <string name="introduction">Introducing the ultimate lottery results app! Stay up-to-date with the latest winning numbers and jackpot amounts for all your favorite lottery games. Easily access past results and update for upcoming draws. Never miss a chance to win again with this convenient and user-friendly app</string>
@@ -81,5 +79,6 @@ For official confirmation and any other questions, we suggest visiting the PCSO\
     <string name="sign_out_summary">End your current session</string>
     <string name="delete_account">Delete Account</string>
     <string name="deletion">Deletion</string>
+    <string name="source_code">Source code</string>
     <string name="app_theme">App Theme</string>
 </resources>

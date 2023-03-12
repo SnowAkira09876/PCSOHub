@@ -62,12 +62,6 @@
         app:iconSpaceReserved="false">
 
         <Preference
-            android:title="@string/changelogs"
-            android:key="pref_changelogs"
-            android:summary="@string/whats_new"
-            app:iconSpaceReserved="false" />
-
-        <Preference
             app:fragment="com.ph.pcsolottowatcher.preference.about.AboutFragment"
             android:title="@string/about_pcso_hub"
             android:key="pref_about"

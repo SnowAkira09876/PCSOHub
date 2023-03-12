@@ -30,6 +30,13 @@ public class AboutFragment extends MaterialAboutFragment {
                     getString(R.string.version),
                     true))
             .addItem(
+                ConvenienceBuilder.createWebsiteActionItem(
+                    context,
+                    getDrawable(R.drawable.ic_github),
+                    getString(R.string.source_code),
+                    false,
+                    Uri.parse("https://github.com/SnowAkira09876/PCSOHub")))
+            .addItem(
                 ConvenienceBuilder.createEmailItem(
                     context,
                     getDrawable(R.drawable.ic_email),
