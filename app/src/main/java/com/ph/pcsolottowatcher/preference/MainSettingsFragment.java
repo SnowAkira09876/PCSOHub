@@ -133,12 +133,6 @@ public class MainSettingsFragment extends BasePreference<MainSettingsFragmentPre
               return true;
             });
 
-    findPreference("pref_changelogs")
-        .setOnPreferenceClickListener(
-            preference -> {
-              viewModel.setMessage("Coming soon!");
-              return true;
-            });
     findPreference("pref_clear_cache")
         .setOnPreferenceClickListener(
             preference -> {
