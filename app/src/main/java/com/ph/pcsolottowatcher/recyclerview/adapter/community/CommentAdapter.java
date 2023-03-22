@@ -4,13 +4,13 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import com.google.firebase.database.Query;
+import com.ph.pcsolottowatcher.common.recyclerview.BaseFirebaseAdapter;
 import com.ph.pcsolottowatcher.data.firebase.UserDataHelper;
 import com.ph.pcsolottowatcher.databinding.CommentItemBinding;
 import com.ph.pcsolottowatcher.pojos.firebase.CommentItemModel;
-import com.ph.pcsolottowatcher.recyclerview.RootFirebaseAdapter;
 import com.ph.pcsolottowatcher.recyclerview.holder.community.comment.CommentViewHolder;
 
-public class CommentAdapter extends RootFirebaseAdapter<CommentItemModel> {
+public class CommentAdapter extends BaseFirebaseAdapter<CommentItemModel> {
   private UserDataHelper userDataHelper;
 
   public CommentAdapter(

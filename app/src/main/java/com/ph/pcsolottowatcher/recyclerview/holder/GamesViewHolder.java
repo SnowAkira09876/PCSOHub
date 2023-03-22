@@ -3,9 +3,9 @@ package com.ph.pcsolottowatcher.recyclerview.holder;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.card.MaterialCardView;
+import com.ph.pcsolottowatcher.common.recyclerview.BaseListAdapter;
 import com.ph.pcsolottowatcher.databinding.GamesItemBinding;
 import com.ph.pcsolottowatcher.pojos.LottoGameBaseModel;
-import com.ph.pcsolottowatcher.recyclerview.RootListAdapter;
 import com.ph.pcsolottowatcher.recyclerview.adapter.GamesAdapter;
 
 public class GamesViewHolder extends RecyclerView.ViewHolder {
@@ -20,7 +20,7 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
 
   public void bind(
       GamesAdapter adapter,
-      RootListAdapter.ItemClickListener listener,
+      BaseListAdapter.ItemClickListener listener,
       LottoGameBaseModel model,
       int position) {
 

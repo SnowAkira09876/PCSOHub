@@ -2,6 +2,8 @@ package com.ph.pcsolottowatcher.recyclerview;
 
 import androidx.recyclerview.widget.DiffUtil;
 import com.google.firebase.database.Query;
+import com.ph.pcsolottowatcher.common.recyclerview.BaseFirebaseAdapter;
+import com.ph.pcsolottowatcher.common.recyclerview.BaseListAdapter;
 import com.ph.pcsolottowatcher.data.firebase.FeedDataHelper;
 import com.ph.pcsolottowatcher.data.firebase.UserDataHelper;
 import com.ph.pcsolottowatcher.data.sql.post.PostCache;
@@ -27,56 +29,56 @@ import java.util.Objects;
 
 public class AdapterFactory {
 
-  public static RootListAdapter<SixDigitsHistoryModel> getSixDigitHistoryAdapter() {
+  public static BaseListAdapter<SixDigitsHistoryModel> getSixDigitHistoryAdapter() {
     DiffUtil.ItemCallback<SixDigitsHistoryModel> diffUtil = getDiffUtil();
 
     return new SixDigitsHistoryAdapter(diffUtil);
   }
 
-  public static RootListAdapter<DHistoryModel> getDHistoryAdapter() {
+  public static BaseListAdapter<DHistoryModel> getDHistoryAdapter() {
     DiffUtil.ItemCallback<DHistoryModel> diffUtil = getDiffUtil();
 
     return new DHistoryAdapter(diffUtil);
   }
 
-  public static RootListAdapter<ThreeTimeHistoryModel> getThreeTimeHistoryAdapter() {
+  public static BaseListAdapter<ThreeTimeHistoryModel> getThreeTimeHistoryAdapter() {
 
     DiffUtil.ItemCallback<ThreeTimeHistoryModel> diffUtil = getDiffUtil();
 
     return new ThreeTimeHistoryAdapter(diffUtil);
   }
 
-  public static RootListAdapter<OneTimeHistoryModel> getOneTimeHistoryAdapter() {
+  public static BaseListAdapter<OneTimeHistoryModel> getOneTimeHistoryAdapter() {
 
     DiffUtil.ItemCallback<OneTimeHistoryModel> diffUtil = getDiffUtil();
 
     return new OneTimeHistoryAdapter(diffUtil);
   }
 
-  public static RootListAdapter<LocalHistoryModel> getAllResultsAdapter() {
+  public static BaseListAdapter<LocalHistoryModel> getAllResultsAdapter() {
 
     DiffUtil.ItemCallback<LocalHistoryModel> diffUtil = getDiffUtil();
 
     return new AllResultsAdapter(diffUtil);
   }
 
-  public static RootListAdapter<LottoGameBaseModel> getGamesAdapter(
-      RootListAdapter.ItemClickListener listener) {
+  public static BaseListAdapter<LottoGameBaseModel> getGamesAdapter(
+      BaseListAdapter.ItemClickListener listener) {
 
     DiffUtil.ItemCallback<LottoGameBaseModel> diffUtil = getGamesDiffUtil();
 
     return new GamesAdapter(diffUtil, listener);
   }
 
-  public static RootListAdapter<String> getSearchHistoryAdapter(
-      RootAdapter.SearchHistoryItemClickListener listener) {
+  public static BaseListAdapter<String> getSearchHistoryAdapter(
+      BaseListAdapter.SearchHistoryItemClickListener listener) {
     DiffUtil.ItemCallback<String> diffUtil = getSearchDiffUtil();
 
     return new SearchHistoryAdapter(diffUtil, listener);
   }
 
-  public static RootFirebaseAdapter getFeedAdapter(
-      RootAdapter.FeedItemClickListener listener,
+  public static BaseFirebaseAdapter getFeedAdapter(
+      BaseListAdapter.FeedItemClickListener listener,
       Query query,
       PostCache postCache,
       FeedDataHelper feedDataHelper,
@@ -86,7 +88,7 @@ public class AdapterFactory {
         listener, PostItemModel.class, query, postCache, feedDataHelper, userDataHelper);
   }
 
-  public static RootFirebaseAdapter getCommentAdapter(Query query, UserDataHelper userDataHelper) {
+  public static BaseFirebaseAdapter getCommentAdapter(Query query, UserDataHelper userDataHelper) {
 
     return new CommentAdapter(CommentItemModel.class, query, userDataHelper);
   }

@@ -1,7 +1,8 @@
-.androidide/
+.androidide
 app/build
-build/
+build
+images
 app/google-services.json
-.gradle/
-.ssh/
-gradle/
+.gradle
+.ssh
+gradle

@@ -39,6 +39,7 @@ public class AllResultsFragment extends BaseFragment<AllResultsPresenter>
   @Override
   protected void injectDependencies() {
     AppComponent appComponent = StartApplication.getComponent();
+
     this.jsonHelper = appComponent.getJsonHelper();
     appComponent.inject(this);
   }

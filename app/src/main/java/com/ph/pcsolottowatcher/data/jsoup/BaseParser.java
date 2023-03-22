@@ -1,7 +1,6 @@
 package com.ph.pcsolottowatcher.data.jsoup;
 
 import android.os.Handler;
-import android.util.Log;
 import android.webkit.WebView;
 import androidx.annotation.NonNull;
 import com.ph.pcsolottowatcher.data.sql.cache.BaseCache;

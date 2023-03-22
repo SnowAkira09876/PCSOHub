@@ -4,18 +4,18 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
+import com.ph.pcsolottowatcher.common.recyclerview.BaseListAdapter;
 import com.ph.pcsolottowatcher.databinding.GamesItemBinding;
 import com.ph.pcsolottowatcher.pojos.LottoGameBaseModel;
-import com.ph.pcsolottowatcher.recyclerview.RootListAdapter;
 import com.ph.pcsolottowatcher.recyclerview.holder.GamesViewHolder;
 
-public class GamesAdapter extends RootListAdapter<LottoGameBaseModel> {
-  private RootListAdapter.ItemClickListener listener;
+public class GamesAdapter extends BaseListAdapter<LottoGameBaseModel> {
+  private BaseListAdapter.ItemClickListener listener;
   public int lastChecked = -1;
   private boolean toClearCheck = false;
 
   public GamesAdapter(
-      DiffUtil.ItemCallback<LottoGameBaseModel> diff, RootListAdapter.ItemClickListener listener) {
+      DiffUtil.ItemCallback<LottoGameBaseModel> diff, BaseListAdapter.ItemClickListener listener) {
     super(diff);
     this.listener = listener;
   }

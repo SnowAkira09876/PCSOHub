@@ -134,7 +134,10 @@ public class JsonHelper {
     return json;
   }
 
-  @Deprecated
+  /*For Future use. We need this method to convert lottery results
+   * to JSON Format and save it to assets.
+   */
+	
   public void dataWriter(List<LocalHistoryModel> list) {
     String json = gson.toJson(list);
 

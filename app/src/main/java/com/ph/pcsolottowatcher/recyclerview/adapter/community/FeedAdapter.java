@@ -4,24 +4,24 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import com.google.firebase.database.Query;
+import com.ph.pcsolottowatcher.common.recyclerview.BaseFirebaseAdapter;
+import com.ph.pcsolottowatcher.common.recyclerview.BaseListAdapter;
 import com.ph.pcsolottowatcher.data.firebase.FeedDataHelper;
 import com.ph.pcsolottowatcher.data.firebase.UserDataHelper;
 import com.ph.pcsolottowatcher.data.sql.post.PostCache;
 import com.ph.pcsolottowatcher.databinding.FeedItemBinding;
 import com.ph.pcsolottowatcher.pojos.firebase.PostItemModel;
-import com.ph.pcsolottowatcher.recyclerview.RootAdapter;
-import com.ph.pcsolottowatcher.recyclerview.RootFirebaseAdapter;
 import com.ph.pcsolottowatcher.recyclerview.holder.community.feed.FeedViewHolder;
 
-public class FeedAdapter extends RootFirebaseAdapter<PostItemModel> {
-  private RootAdapter.FeedItemClickListener listener;
+public class FeedAdapter extends BaseFirebaseAdapter<PostItemModel> {
+  private BaseListAdapter.FeedItemClickListener listener;
   private PostCache postCache;
   private FeedDataHelper feedDataHelper;
   private UserDataHelper userDataHelper;
   private int newPosts = 0;
 
   public FeedAdapter(
-      RootAdapter.FeedItemClickListener listener,
+      BaseListAdapter.FeedItemClickListener listener,
       Class<PostItemModel> modelClass,
       Query query,
       PostCache postCache,

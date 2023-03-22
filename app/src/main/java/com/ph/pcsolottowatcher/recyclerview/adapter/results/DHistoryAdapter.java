@@ -4,14 +4,14 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
+import com.ph.pcsolottowatcher.common.recyclerview.BaseListAdapter;
 import com.ph.pcsolottowatcher.databinding.DHistoryItemBinding;
 import com.ph.pcsolottowatcher.databinding.DLatestItemBinding;
 import com.ph.pcsolottowatcher.pojos.d.DHistoryModel;
-import com.ph.pcsolottowatcher.recyclerview.RootListAdapter;
 import com.ph.pcsolottowatcher.recyclerview.holder.results.d.DHistoryViewHolder;
 import com.ph.pcsolottowatcher.recyclerview.holder.results.d.DLatestViewHolder;
 
-public class DHistoryAdapter extends RootListAdapter<DHistoryModel> {
+public class DHistoryAdapter extends BaseListAdapter<DHistoryModel> {
   private static final int SIX_DIGITS_LATEST_ITEM = 0;
   private static final int SIX_DIGITS_HISTORY_ITEM = 1;
 

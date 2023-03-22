@@ -1,4 +1,4 @@
-package com.ph.pcsolottowatcher.recyclerview;
+package com.ph.pcsolottowatcher.common.recyclerview;
 
 import android.annotation.SuppressLint;
 import android.view.ViewGroup;
@@ -7,13 +7,14 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.Query;
 import com.ph.pcsolottowatcher.pojos.BaseFirebaseModel;
+import com.ph.pcsolottowatcher.pojos.firebase.PostItemModel;
 
-public abstract class RootFirebaseAdapter<T extends BaseFirebaseModel>
+public abstract class BaseFirebaseAdapter<T extends BaseFirebaseModel>
     extends FirebaseRecyclerAdapter<T, RecyclerView.ViewHolder> {
 
   private Class<T> modelClass;
 
-  public RootFirebaseAdapter(Class<T> modelClass, Query query) {
+  public BaseFirebaseAdapter(Class<T> modelClass, Query query) {
     super(new FirebaseRecyclerOptions.Builder<T>().setQuery(query, modelClass).build());
     this.modelClass = modelClass;
   }
@@ -28,5 +29,23 @@ public abstract class RootFirebaseAdapter<T extends BaseFirebaseModel>
         new FirebaseRecyclerOptions.Builder<T>().setQuery(newQuery, modelClass).build();
     updateOptions(options);
     notifyDataSetChanged();
+  }
+
+  public interface FeedItemClickListener {
+    void onCommentClick(PostItemModel model);
+
+    void onLikeClick(PostItemModel model);
+
+    void showLoginDialog();
+
+    void setUserNameAlert(String message);
+
+    void onDataChanged();
+  }
+
+  public interface SearchHistoryItemClickListener {
+    void onSearchClick(String history);
+
+    void onPutTextToSearch(String history);
   }
 }

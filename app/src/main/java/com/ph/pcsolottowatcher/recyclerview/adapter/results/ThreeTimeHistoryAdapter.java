@@ -4,14 +4,14 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
+import com.ph.pcsolottowatcher.common.recyclerview.BaseListAdapter;
 import com.ph.pcsolottowatcher.databinding.ThreeTimeHistoryItemBinding;
 import com.ph.pcsolottowatcher.databinding.ThreeTimeLatestItemBinding;
 import com.ph.pcsolottowatcher.pojos.threetime.ThreeTimeHistoryModel;
-import com.ph.pcsolottowatcher.recyclerview.RootListAdapter;
 import com.ph.pcsolottowatcher.recyclerview.holder.results.threetime.ThreeTimeHistoryViewHolder;
 import com.ph.pcsolottowatcher.recyclerview.holder.results.threetime.ThreeTimeLatestViewHolder;
 
-public class ThreeTimeHistoryAdapter extends RootListAdapter<ThreeTimeHistoryModel> {
+public class ThreeTimeHistoryAdapter extends BaseListAdapter<ThreeTimeHistoryModel> {
   private static final int THREE_TIME_LATEST_ITEM = 0;
   private static final int THREE_TIME_HISTORY_ITEM = 1;
 

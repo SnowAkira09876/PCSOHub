@@ -3,8 +3,8 @@ package com.ph.pcsolottowatcher.recyclerview.holder.results.search;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
+import com.ph.pcsolottowatcher.common.recyclerview.BaseListAdapter;
 import com.ph.pcsolottowatcher.databinding.SearchHistoryItemBinding;
-import com.ph.pcsolottowatcher.recyclerview.RootAdapter;
 
 public class SearchHistoryViewHolder extends RecyclerView.ViewHolder {
   private TextView search;
@@ -16,7 +16,7 @@ public class SearchHistoryViewHolder extends RecyclerView.ViewHolder {
     this.iv_put = binding.ivPut;
   }
 
-  public void bind(RootAdapter.SearchHistoryItemClickListener listener, String model) {
+  public void bind(BaseListAdapter.SearchHistoryItemClickListener listener, String model) {
     search.setText(model);
 
     itemView.setOnClickListener(

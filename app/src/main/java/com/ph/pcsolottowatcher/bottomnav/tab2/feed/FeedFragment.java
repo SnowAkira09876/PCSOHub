@@ -13,6 +13,8 @@ import com.google.firebase.database.Query;
 import com.ph.pcsolottowatcher.StartApplication;
 import com.ph.pcsolottowatcher.bottomnav.tab2.comment.CommentFragment;
 import com.ph.pcsolottowatcher.common.fragment.BaseFragment;
+import com.ph.pcsolottowatcher.common.recyclerview.BaseFirebaseAdapter;
+import com.ph.pcsolottowatcher.common.recyclerview.BaseListAdapter;
 import com.ph.pcsolottowatcher.data.firebase.FeedDataHelper;
 import com.ph.pcsolottowatcher.data.firebase.UserDataHelper;
 import com.ph.pcsolottowatcher.data.json.JsonHelper;
@@ -23,18 +25,16 @@ import com.ph.pcsolottowatcher.di.FeedComponent;
 import com.ph.pcsolottowatcher.pojos.LottoGameBaseModel;
 import com.ph.pcsolottowatcher.pojos.firebase.PostItemModel;
 import com.ph.pcsolottowatcher.recyclerview.AdapterFactory;
-import com.ph.pcsolottowatcher.recyclerview.RootAdapter;
-import com.ph.pcsolottowatcher.recyclerview.RootFirebaseAdapter;
 import com.ph.pcsolottowatcher.viewmodels.FeedViewModel;
 import com.ph.pcsolottowatcher.viewmodels.MainActivityViewModel;
 import java.util.List;
 
 public class FeedFragment extends BaseFragment<FeedPresenter>
-    implements FeedView, RootAdapter.FeedItemClickListener {
+    implements FeedView, BaseListAdapter.FeedItemClickListener {
   private FragmentHistoryBinding binding;
   private RecyclerView rv_feed;
   private LinearLayoutManager llm;
-  private RootFirebaseAdapter feedAdapter;
+  private BaseFirebaseAdapter feedAdapter;
   private Query query;
   private MainActivityViewModel viewModel;
   private FeedViewModel community_viewModel;

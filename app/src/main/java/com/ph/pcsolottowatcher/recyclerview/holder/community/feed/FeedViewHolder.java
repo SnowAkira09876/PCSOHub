@@ -11,11 +11,11 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.ph.pcsolottowatcher.R;
+import com.ph.pcsolottowatcher.common.recyclerview.BaseListAdapter;
 import com.ph.pcsolottowatcher.data.firebase.FeedDataHelper;
 import com.ph.pcsolottowatcher.data.firebase.UserDataHelper;
 import com.ph.pcsolottowatcher.databinding.FeedItemBinding;
 import com.ph.pcsolottowatcher.pojos.firebase.PostItemModel;
-import com.ph.pcsolottowatcher.recyclerview.RootAdapter;
 import com.ph.pcsolottowatcher.widgets.circular.CircularDigitView;
 import com.squareup.picasso.Picasso;
 import java.util.concurrent.CompletableFuture;
@@ -51,7 +51,7 @@ public class FeedViewHolder extends RecyclerView.ViewHolder {
   }
 
   public void bind(
-      RootAdapter.FeedItemClickListener listener,
+      BaseListAdapter.FeedItemClickListener listener,
       PostItemModel model,
       FeedDataHelper feedDataHelper,
       UserDataHelper userDataHelper) {
@@ -121,7 +121,7 @@ public class FeedViewHolder extends RecyclerView.ViewHolder {
     feedDataHelper.getLikes(model.getId(), consumer);
   }
 
-  private void setLike(RootAdapter.FeedItemClickListener listener, PostItemModel model) {
+  private void setLike(BaseListAdapter.FeedItemClickListener listener, PostItemModel model) {
 
     BiConsumer<Integer, Boolean> consumer =
         (result, like) -> {

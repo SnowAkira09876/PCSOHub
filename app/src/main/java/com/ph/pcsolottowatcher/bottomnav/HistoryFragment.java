@@ -9,9 +9,9 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.ph.pcsolottowatcher.common.fragment.BaseFragment;
+import com.ph.pcsolottowatcher.common.recyclerview.BaseListAdapter;
 import com.ph.pcsolottowatcher.databinding.FragmentHistoryBinding;
 import com.ph.pcsolottowatcher.pojos.BaseHistoryModel;
-import com.ph.pcsolottowatcher.recyclerview.RootListAdapter;
 import com.ph.pcsolottowatcher.viewmodels.AllResultsViewModel;
 import com.ph.pcsolottowatcher.viewmodels.MainActivityViewModel;
 import com.ph.pcsolottowatcher.viewmodels.ResultsViewModel;
@@ -21,7 +21,7 @@ import java.util.List;
 public abstract class HistoryFragment<T extends BaseHistoryModel>
     extends BaseFragment<HistoryPresenter<T>> implements HistoryView<T> {
   protected RecyclerView rv;
-  protected RootListAdapter<T> rootListAdapter;
+  protected BaseListAdapter<T> rootListAdapter;
   private LinearLayoutManager llm;
   protected List<T> list;
   private FragmentHistoryBinding binding;
@@ -30,9 +30,9 @@ public abstract class HistoryFragment<T extends BaseHistoryModel>
   private ResultsViewModel results_viewModel;
   private AllResultsViewModel all_results_viewModel;
 
-  protected abstract void onsetBundle();
+  protected abstract BaseListAdapter<T> getAdapter();
 
-  protected abstract RootListAdapter<T> getAdapter();
+  protected abstract void onsetBundle();
 
   @Override
   public void onCreate(Bundle saveInstanceState) {
@@ -43,6 +43,7 @@ public abstract class HistoryFragment<T extends BaseHistoryModel>
     this.results_viewModel = new ViewModelProvider(getActivity()).get(ResultsViewModel.class);
     this.all_results_viewModel =
         new ViewModelProvider(getActivity()).get(AllResultsViewModel.class);
+
     onsetBundle();
   }
 

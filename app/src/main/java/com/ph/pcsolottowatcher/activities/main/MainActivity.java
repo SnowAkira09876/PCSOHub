@@ -36,6 +36,7 @@ import com.ph.pcsolottowatcher.StartApplication;
 import com.ph.pcsolottowatcher.activities.preference.MainPreferenceActivity;
 import com.ph.pcsolottowatcher.bottomnav.tab2.post.PostFragment;
 import com.ph.pcsolottowatcher.common.activity.BaseActivity;
+import com.ph.pcsolottowatcher.common.recyclerview.BaseListAdapter;
 import com.ph.pcsolottowatcher.data.firebase.UserDataHelper;
 import com.ph.pcsolottowatcher.data.sharedpref.PrefHelper;
 import com.ph.pcsolottowatcher.data.sql.search.SearchHistoryCache;
@@ -46,8 +47,6 @@ import com.ph.pcsolottowatcher.dialogs.sort.DialogFragmentSort;
 import com.ph.pcsolottowatcher.dialogs.verifyemail.FragmentDialogVerifyEmail;
 import com.ph.pcsolottowatcher.pojos.LottoGameBaseModel;
 import com.ph.pcsolottowatcher.recyclerview.AdapterFactory;
-import com.ph.pcsolottowatcher.recyclerview.RootAdapter;
-import com.ph.pcsolottowatcher.recyclerview.RootListAdapter;
 import com.ph.pcsolottowatcher.recyclerview.adapter.GamesAdapter;
 import com.ph.pcsolottowatcher.viewmodels.AllResultsViewModel;
 import com.ph.pcsolottowatcher.viewmodels.FeedViewModel;
@@ -60,8 +59,8 @@ import java.util.List;
 
 public class MainActivity extends BaseActivity<MainActivityPresenter>
     implements MainActivityView,
-        RootAdapter.SearchHistoryItemClickListener,
-        RootListAdapter.ItemClickListener {
+        BaseListAdapter.SearchHistoryItemClickListener,
+        BaseListAdapter.ItemClickListener {
 
   private ActivityMainBinding binding;
   private BottomNavigationView bottomNavigationView;
@@ -75,8 +74,8 @@ public class MainActivity extends BaseActivity<MainActivityPresenter>
   private SearchBar searchBar;
   private SearchView searchView;
   private RecyclerView rv_search;
-  private RootListAdapter<String> searchAdapter;
-  private RootListAdapter<LottoGameBaseModel> gamesAdapter;
+  private BaseListAdapter<String> searchAdapter;
+  private BaseListAdapter<LottoGameBaseModel> gamesAdapter;
   private static final int RESULTS_PROFILE = R.id.results_profile;
   private final Handler handler = new Handler(Looper.getMainLooper());
   private final PostFragment postFragment = new PostFragment();
@@ -96,7 +95,6 @@ public class MainActivity extends BaseActivity<MainActivityPresenter>
   private FeedViewModel feed_viewModel;
 
   private RecyclerView rv;
-  private AppComponent appComponent;
 
   PrefHelper prefHelper;
   SearchHistoryCache searchHistoryCache;
@@ -104,7 +102,8 @@ public class MainActivity extends BaseActivity<MainActivityPresenter>
 
   @Override
   protected void injectDependencies() {
-    this.appComponent = StartApplication.getComponent();
+    AppComponent appComponent = StartApplication.getComponent();
+    System.out.println(appComponent.hashCode());
 
     this.prefHelper = appComponent.getPrefHelper();
     this.searchHistoryCache = appComponent.getSearchHistoryCache();
