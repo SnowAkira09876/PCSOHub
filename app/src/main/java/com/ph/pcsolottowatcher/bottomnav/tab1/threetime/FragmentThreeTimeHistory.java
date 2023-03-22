@@ -4,7 +4,7 @@ import android.os.Build;
 import com.ph.pcsolottowatcher.bottomnav.HistoryFragment;
 import com.ph.pcsolottowatcher.common.recyclerview.BaseListAdapter;
 import com.ph.pcsolottowatcher.pojos.threetime.ThreeTimeHistoryModel;
-import com.ph.pcsolottowatcher.recyclerview.AdapterFactory;
+import com.ph.pcsolottowatcher.recyclerviews.AdapterFactory;
 
 public class FragmentThreeTimeHistory extends HistoryFragment<ThreeTimeHistoryModel> {
 

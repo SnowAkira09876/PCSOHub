@@ -19,7 +19,7 @@ import com.ph.pcsolottowatcher.databinding.BottomSheetCommentBinding;
 import com.ph.pcsolottowatcher.di.AppComponent;
 import com.ph.pcsolottowatcher.di.FeedComponent;
 import com.ph.pcsolottowatcher.pojos.firebase.CommentItemModel;
-import com.ph.pcsolottowatcher.recyclerview.AdapterFactory;
+import com.ph.pcsolottowatcher.recyclerviews.AdapterFactory;
 import com.ph.pcsolottowatcher.viewmodels.MainActivityViewModel;
 import java.util.ArrayList;
 import java.util.List;
