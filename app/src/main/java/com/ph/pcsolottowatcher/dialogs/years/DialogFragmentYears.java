@@ -3,13 +3,12 @@ package com.ph.pcsolottowatcher.dialogs.years;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import androidx.fragment.app.DialogFragment;
 import androidx.lifecycle.ViewModelProvider;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.ph.pcsolottowatcher.common.dialog.BaseDialogFragment;
 import com.ph.pcsolottowatcher.viewmodels.AllResultsViewModel;
 
-public class DialogFragmentYears extends BaseDialogFragment<DialogFragmentYearsPresenter>
-    implements DialogFragmentYearsView {
+public class DialogFragmentYears extends DialogFragment {
   private final String[] years = {
     "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013"
   };
@@ -24,10 +23,7 @@ public class DialogFragmentYears extends BaseDialogFragment<DialogFragmentYearsP
   }
 
   @Override
-  protected void onsetViewBinding() {}
-
-  @Override
-  protected Dialog onsetDialog() {
+  public Dialog onCreateDialog(Bundle bundle) {
     MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getActivity());
     builder.setTitle("Sort by year");
     builder.setSingleChoiceItems(
@@ -47,16 +43,5 @@ public class DialogFragmentYears extends BaseDialogFragment<DialogFragmentYearsP
     builder.setNegativeButton("Cancel", (DialogInterface dialog, int id) -> {});
 
     return builder.create();
-  }
-
-  @Override
-  protected void onsetViews() {}
-
-  @Override
-  protected void injectDependencies() {}
-
-  @Override
-  protected DialogFragmentYearsPresenter createPresenter() {
-    return new DialogFragmentYearsPresenter(this);
   }
 }
