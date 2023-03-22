@@ -21,7 +21,7 @@ public class DBaseViewHolder extends RecyclerView.ViewHolder {
 
   protected void bind(DHistoryModel model) {
     this.numberText =
-        model.getNumber().length() > 1
+        model.getNumber().contains("-")
             ? model.getNumber().split("-")
             : new String[] {"?", "?", "?"};
 

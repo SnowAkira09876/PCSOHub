@@ -23,7 +23,7 @@ public class OneTimeBaseViewHolder extends RecyclerView.ViewHolder {
   protected void bind(OneTimeHistoryModel model) {
     this.model = model;
     this.timeOneResultText =
-        model.getTimeOneResult().length() > 1
+        model.getTimeOne().contains("-")
             ? model.getTimeOneResult().split("-")
             : new String[] {"?", "?", "?", "?"};
 

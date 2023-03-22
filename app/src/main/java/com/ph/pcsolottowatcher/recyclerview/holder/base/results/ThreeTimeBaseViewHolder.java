@@ -23,15 +23,15 @@ public class ThreeTimeBaseViewHolder extends RecyclerView.ViewHolder {
   public void bind(ThreeTimeHistoryModel model) {
     this.model = model;
     this.timeOneResultText =
-        model.getTimeOneResult().length() > 1
+        model.getTimeOneResult().contains("-")
             ? model.getTimeOneResult().split("-")
             : new String[] {"?", "?"};
     this.timeTwoResultText =
-        model.getTimeTwoResult().length() > 1
+        model.getTimeTwoResult().contains("-")
             ? model.getTimeTwoResult().split("-")
             : new String[] {"?", "?"};
     this.timeThreeResultText =
-        model.getTimeThreeResult().length() > 1
+        model.getTimeThreeResult().contains("-")
             ? model.getTimeThreeResult().split("-")
             : new String[] {"?", "?"};
 

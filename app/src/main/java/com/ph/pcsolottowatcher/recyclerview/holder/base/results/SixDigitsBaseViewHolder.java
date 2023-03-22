@@ -27,7 +27,7 @@ public class SixDigitsBaseViewHolder extends RecyclerView.ViewHolder {
     String prizeText = model.getPrize().length() > 1 ? model.getPrize() : "";
 
     this.numberText =
-        model.getNumber().length() > 1
+        model.getNumber().contains("-")
             ? model.getNumber().split("-")
             : new String[] {"?", "?", "?", "?", "?", "?"};
 
