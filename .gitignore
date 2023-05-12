@@ -1,6 +1,6 @@
 .androidide
 app/build
-build
+build/tmp/spotless-register-dependencies
 images
 app/google-services.json
 .gradle
