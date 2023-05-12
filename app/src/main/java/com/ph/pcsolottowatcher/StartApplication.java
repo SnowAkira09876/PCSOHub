@@ -2,7 +2,6 @@ package com.ph.pcsolottowatcher;
 
 import android.app.Application;
 import androidx.appcompat.app.AppCompatDelegate;
-import com.itsaky.androidide.logsender.LogSender;
 import com.ph.pcsolottowatcher.data.sharedpref.PrefHelper;
 import com.ph.pcsolottowatcher.di.AppComponent;
 import com.ph.pcsolottowatcher.di.DaggerAppComponent;
@@ -15,8 +14,6 @@ public class StartApplication extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
-    LogSender.startLogging(this);
-
     component =
         DaggerAppComponent.builder()
             .dataCoreModule(new DataCoreModule(getApplicationContext()))

@@ -8,16 +8,11 @@ import android.text.InputFilter;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup.MarginLayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
@@ -27,6 +22,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.elevation.SurfaceColors;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.search.SearchBar;
 import com.google.android.material.search.SearchView;
@@ -118,6 +114,7 @@ public class MainActivity extends BaseActivity<MainActivityPresenter>
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    getWindow().setNavigationBarColor(SurfaceColors.SURFACE_2.getColor(this));
     this.binding = ActivityMainBinding.inflate(getLayoutInflater());
 
     this.viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
@@ -209,30 +206,6 @@ public class MainActivity extends BaseActivity<MainActivityPresenter>
 
   private void onsetViews() {
     onsetGames();
-
-    WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
-    ViewCompat.setOnApplyWindowInsetsListener(
-        searchBar,
-        (v, windowInsets) -> {
-          Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.statusBars());
-          MarginLayoutParams mlp = (MarginLayoutParams) v.getLayoutParams();
-          mlp.topMargin = insets.top;
-          v.setLayoutParams(mlp);
-
-          return WindowInsetsCompat.CONSUMED;
-        });
-
-    ViewCompat.setOnApplyWindowInsetsListener(
-        binding.navHostFragment,
-        (v, windowInsets) -> {
-          Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.navigationBars());
-          MarginLayoutParams mlp = (MarginLayoutParams) v.getLayoutParams();
-          mlp.bottomMargin = insets.bottom;
-          v.setLayoutParams(mlp);
-
-          return WindowInsetsCompat.CONSUMED;
-        });
-
     this.badge = bottomNavigationView.getOrCreateBadge(BOTTOM_COMMUNITY);
     badge.setVisible(false, false);
 
@@ -451,15 +424,23 @@ public class MainActivity extends BaseActivity<MainActivityPresenter>
               || navController.getCurrentDestination().getId() == BOTTOM_ALL_RESULTS) {
             if (newState == SearchView.TransitionState.SHOWING) {
               fab.hide();
+              getWindow().setStatusBarColor(SurfaceColors.SURFACE_3.getColor(this));
+              getWindow().setNavigationBarColor(SurfaceColors.SURFACE_3.getColor(this));
             } else if (previousState == SearchView.TransitionState.HIDING) {
+              getWindow().setStatusBarColor(SurfaceColors.SURFACE_2.getColor(this));
+              getWindow().setNavigationBarColor(SurfaceColors.SURFACE_2.getColor(this));
               fab.show();
             }
           }
 
           if (newState == SearchView.TransitionState.SHOWING) {
             isSearchViewHidden = false;
+            getWindow().setStatusBarColor(SurfaceColors.SURFACE_3.getColor(this));
+            getWindow().setNavigationBarColor(SurfaceColors.SURFACE_3.getColor(this));
           } else if (previousState == SearchView.TransitionState.HIDING) {
             isSearchViewHidden = true;
+            getWindow().setStatusBarColor(SurfaceColors.SURFACE_0.getColor(this));
+            getWindow().setNavigationBarColor(SurfaceColors.SURFACE_2.getColor(this));
           }
         });
 
